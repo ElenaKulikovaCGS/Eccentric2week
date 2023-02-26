@@ -209,7 +209,7 @@ Transform:
   - {fileID: 1132141909}
   - {fileID: 2010208273}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &139273546 stripped
 Transform:
@@ -345,7 +345,7 @@ RectTransform:
   - {fileID: 1241925605}
   - {fileID: 852482096}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -961,7 +961,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1132141908
 GameObject:
@@ -1456,7 +1456,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1792013870
 GameObject:
@@ -1618,7 +1618,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1796816640
 MonoBehaviour:
@@ -1748,7 +1748,7 @@ GameObject:
   - component: {fileID: 2008252053}
   - component: {fileID: 2008252052}
   m_Layer: 0
-  m_Name: CoinsField
+  m_Name: CoinBombField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1768,6 +1768,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefabCoin: {fileID: 6255006066626433513, guid: 5fc6e8c6d56cd0948b6f705bebccbc7b, type: 3}
   _totalNumberCoins: 50
+  _prefabBomb: {fileID: 2876789307536601018, guid: 53be6e7f2b3db934b838168a88c23cd5, type: 3}
+  _totalNumberBombs: 10
   _playingFieldLength: 50
   _playinFieldHeight: 20
 --- !u!4 &2008252053
@@ -1783,7 +1785,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2010208272
 GameObject:
