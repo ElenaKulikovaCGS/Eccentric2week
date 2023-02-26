@@ -9,10 +9,12 @@ public class CoinCounter : MonoBehaviour
     [SerializeField] int TotalNumberCoins;
 
     [SerializeField] GameObject _activeWinText;
+    [SerializeField] GameObject _inactiveCollectTextCoin;
 
     private void WinText()
     {
         _activeWinText.SetActive(enabled);
+        _inactiveCollectTextCoin.SetActive(enabled=false);
     }
     private void Update()
     {
