@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4139783241440440920}
   m_Layer: 0
-  m_Name: air_Biplane_A_yup
+  m_Name: Biplane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
