@@ -60,10 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d444a7b788734443ae759598cc306c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotateSpeed: 60
-  _addRotateSpeed: 0
-  CoinNumberText: 0
-  TotalNumberCoins: 5
+  _rotateSpeed: 100
+  _addRotateSpeed: 1
 --- !u!1 &9155795235116617373
 GameObject:
   m_ObjectHideFlags: 0

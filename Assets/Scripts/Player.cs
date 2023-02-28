@@ -6,16 +6,11 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     [SerializeField] float Speed;
-    [SerializeField] float RotationSpeed;
-    //private Rigidbody _rigidbody;
-
-    //[SerializeField] GameObject _camera;
-    //private float _forwardForce;
-    //float _cameraTransform;
-    [SerializeField] float _speedSercetivity;
+    [SerializeField] float _speedSencetivity;
     [SerializeField] Transform _cameraTransform;
     float _yOffset;
     float _xOffset;
+    public Rigidbody Rigidbody;
 
     public int Health;
     [SerializeField] GameObject _lossText;
@@ -27,18 +22,14 @@ public class Player : MonoBehaviour
     {
         _lossText.SetActive(enabled);
     }
+
     private void Start()
     {
         _healthText = FindAnyObjectByType<HealthText>().GetComponent<TextMeshProUGUI>();
-        
     }
-    private void Awake()
-    {
-     //   _rigidbody = GetComponent<Rigidbody>();
-    }
+
     private void Update()
     {
-        
         _healthText.text = "Жизни: " + Health;
         if (Health <= 0)
         {
@@ -46,22 +37,19 @@ public class Player : MonoBehaviour
             gameObject.SetActive(false);
             _inactiveCollectText.SetActive(false);
             _inactiveHealthText.SetActive(false);
-
         }
     }
     private void FixedUpdate()
     {
-        /*
-         * float sideForce = Input.GetAxis("Horizontal") * Speed;
-        _forwardForce = Input.GetAxis("Mouse Y") * _speedSercetivity;
-        _rigidbody.AddForce(sideForce, _forwardForce, 0f);
-        _rigidbody.AddTorque(0f, 0f, 0f);
-        */
-        _yOffset -= Input.GetAxis("Mouse Y") *_speedSercetivity;
+        //ограничение перемещения камеры, в теории должно было помочь, чтобы камера не вылезала за границу фона
+        _yOffset -= Input.GetAxis("Mouse Y") * _speedSencetivity;
         _yOffset = Mathf.Clamp(_yOffset, -2f, 2.5f);
-        _xOffset -= Input.GetAxis("Mouse X") *_speedSercetivity;
-        _xOffset = Mathf.Clamp(_xOffset, -38f, 38f);
-        _cameraTransform.position = new Vector3(_xOffset, _yOffset, -30);
-
+        _xOffset -= Input.GetAxis("Mouse X") *_speedSencetivity;
+        _xOffset = Mathf.Clamp(_xOffset, -30f, 30f);
+        _cameraTransform.position = new Vector3(_xOffset, _yOffset, -30f);
+        //полёт самолёта
+        Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
+        Vector3 speedVector = inputVector * Speed;
+        Rigidbody.velocity = new Vector3(speedVector.x, speedVector.y, Rigidbody.velocity.z);
     }
 }
