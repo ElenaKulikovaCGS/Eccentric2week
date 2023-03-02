@@ -5,13 +5,14 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float Speed;
+    /*
+     * [SerializeField] float Speed;
     [SerializeField] float _speedSencetivity;
     [SerializeField] Transform _cameraTransform;
     float _yOffset;
     float _xOffset;
     public Rigidbody Rigidbody;
-
+    */
     public int Health;
     [SerializeField] GameObject _lossText;
     TextMeshProUGUI _healthText;
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        /*
         //ограничение перемещения камеры, в теории должно было помочь, чтобы камера не вылезала за границу фона
         _yOffset -= Input.GetAxis("Mouse Y") * _speedSencetivity;
         _yOffset = Mathf.Clamp(_yOffset, -2f, 2.5f);
@@ -51,5 +53,6 @@ public class Player : MonoBehaviour
         Vector3 inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
         Vector3 speedVector = inputVector * Speed;
         Rigidbody.velocity = new Vector3(speedVector.x, speedVector.y, Rigidbody.velocity.z);
+        */
     }
 }
