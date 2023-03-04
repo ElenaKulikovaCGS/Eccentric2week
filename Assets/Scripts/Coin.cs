@@ -10,15 +10,8 @@ public class Coin : MonoBehaviour
     [SerializeField] float _addRotateSpeed;
     private float _randomRotateSpeed;
 
-    int _coinNumberText;
+    [SerializeField] GameObject _dieEffectPrefab;
 
-    void CollisionCoin()
-    {
-        Destroy(gameObject);
-        _coinNumberText = FindObjectOfType<CoinCounter>().CoinNumber += 1;
-        FindObjectOfType<CoinCollectText>().GetComponent<TextMeshProUGUI>().text="Собрано монет: "+ _coinNumberText;
-        
-    }
     private void Start()
     {
         _randomRotateSpeed = Random.Range(-_addRotateSpeed, _randomRotateSpeed);
@@ -27,11 +20,10 @@ public class Coin : MonoBehaviour
     void Update()
     {
         transform.Rotate(Vector3.up * _rotateSpeed * _randomRotateSpeed * Time.deltaTime);
-
     }
 
-    void OnCollisionEnter(Collision collision)
+    public void Die()
     {
-        CollisionCoin();
+        Destroy(gameObject);
     }
 }

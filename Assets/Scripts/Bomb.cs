@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] GameObject _dieEffectPrefab;
+    public void Die()
     {
-        FindObjectOfType<Player>().Health -= 10;
+        Instantiate(_dieEffectPrefab, transform.position, Quaternion.identity);
         GetComponent<Animator>().enabled = true;
         GetComponent<Animator>().Play("Explosion");
         Destroy(gameObject, 1f);

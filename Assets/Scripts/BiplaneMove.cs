@@ -20,6 +20,5 @@ public class BiplaneMove : MonoBehaviour
 
         float horizontalInput = Input.GetAxis("Horizontal");
         Rigidbody.AddTorque(transform.right * TorqueValue * horizontalInput, ForceMode.VelocityChange);
-
     }
 }
